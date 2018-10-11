@@ -14,9 +14,22 @@
         background-position: center;
         background-size: cover;
     }
-
+    #refresh {
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        right: 10px;
+        fill: white;
+        opacity: 0.7;
+        &:hover {
+            cursor: pointer;
+            fill: black;
+        }
+    }
 }
 
 .flickity-page-dots {
     display: none;
   }
+
+  

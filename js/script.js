@@ -16,3 +16,10 @@ var flkty = new Flickity( elem, {
 var flkty = new Flickity( '.main-carousel', {
 // options
 });
+
+//refresh button
+
+var refreshBtn = document.querySelector("#refresh");
+refreshBtn.addEventListener('click', function() {
+    flkty.select(0)
+});
