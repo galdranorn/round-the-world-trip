@@ -53,26 +53,45 @@ flkty.on( 'scroll', function( progress ) {
 // ----------------------------------------
 
 (function(){ 
+	var infos = document.querySelector('#infos');
 	
-	// Definujemy funkcję initMap w zakresie globalnym (czyli jako właściwość obiektu window).
-  	window.initMap = function() {
-		
-		// Zapisujemy w zmiennej obiekt zawierający współrzędne geograficzne.
+  	window.initMap = function() { 
 		var uluru = {lat: -25.363, lng: 131.044};
+		var coords2 = {lat: -25.363, lng: 134.044};
+		var coords3 = {lat: -25.363, lng: 137.044};
 		
-		// W zmiennej map zapisujemy nową instancję obiektu Map. 
-		var map = new google.maps.Map(document.getElementById('map'), {
-			// Podajemy opcje mapy, np. zoom i punkt wycentrowania mapy.
+		var map = new google.maps.Map(document.querySelector('#map'), {
 			zoom: 4,
 			center: uluru
 		});
 		
-		// Definiujemy marker jako nową instancję obiektu Marker.
-		var marker = new google.maps.Marker({
-			// I podajemy opcje tego markera, np. na której mapie ma być dodany oraz jakie są jego współrzędne. 
+		var markerOne = new google.maps.Marker({
 			position: uluru,
 			map: map
-		}); 
-	}	
-	 
-})();  
+		});
+		
+		markerOne.addListener('click', function(){
+			infos.innerHTML = 'You clicked markerOne';
+		});		
+		
+		var markerTwo = new google.maps.Marker({
+			position: coords2,
+			map: map
+		});
+
+		markerTwo.addListener('click', function(){
+			infos.innerHTML = 'You clicked markerTwo';
+		});		
+		
+		var markerThree = new google.maps.Marker({
+			position: coords3,
+			map: map
+		});
+		
+		markerThree.addListener('click', function(){
+			infos.innerHTML = 'You clicked markerThree';
+		});	
+		
+	}; 
+	
+})();
