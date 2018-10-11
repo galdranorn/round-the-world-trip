@@ -3,16 +3,6 @@
   margin: 0 auto;
 }
 
-.main-carousel .carousel-cell {
-  width: 100%;
-  /* full width */
-  height: 500px;
-  /* height of carousel */
-  margin-right: 10px;
-  background-position: center;
-  background-size: cover;
-}
-
 .main-carousel #refresh {
   position: absolute;
   z-index: 1;
@@ -25,6 +15,16 @@
 .main-carousel #refresh:hover {
   cursor: pointer;
   fill: black;
+}
+
+.carousel-cell {
+  width: 100%;
+  /* full width */
+  height: 500px;
+  /* height of carousel */
+  margin-right: 10px;
+  background-position: center;
+  background-size: cover;
 }
 
 .flickity-page-dots {

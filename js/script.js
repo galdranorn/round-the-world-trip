@@ -1,3 +1,18 @@
+// ----------------------------------------
+// generate slides
+// ----------------------------------------
+var template = document.querySelector("#template-slides").textContent;
+var carousel = document.querySelector("#carousel");
+var slidesAmount = slidesData.length-1;
+
+for (i=0; i<=slidesAmount; i++) {
+    console.log(slidesAmount);
+    var oldHtml = carousel.innerHTML;
+    var newSlide = Mustache.render(template, slidesData[i]);
+    carousel.innerHTML = oldHtml + newSlide;
+};
+
+
 // -----------------------------------------
 // flickity init
 // -----------------------------------------
