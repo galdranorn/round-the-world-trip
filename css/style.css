@@ -30,4 +30,10 @@
 .flickity-page-dots {
   display: none;
 }
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #ccc;
+}
 /*# sourceMappingURL=style.css.map */
