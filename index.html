@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
         <link rel="stylesheet" type="text/css" href="vendor/flickity.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Charmonman|Quicksand" rel="stylesheet">
     </head>
 
     <body>
@@ -18,52 +19,132 @@
         </header>
 
 <!-- flickity carousel -->
+        <div class="progress-bar"></div>
         <div id="carousel" class="main-carousel">
             <!-- refresh icon -->
             <svg version="1.1" id="refresh" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" x="0px" y="0px" viewBox="0 0 16 17" style="enable-background:new 0 0 16 17;" xml:space="preserve">
                 <path d="M11,6h5V1h-1v3.3l-1.2-1.1c-2.9-2.9-7.7-2.9-10.6,0c-2.9,2.9-2.9,7.7,0,10.6C4.7,15.3,6.6,16,8.5,16s3.8-0.7,5.3-2.2l-0.7-0.7c-2.5,2.5-6.7,2.5-9.2,0c-2.5-2.5-2.5-6.7,0-9.2c2.5-2.5,6.7-2.5,9.2,0L14.2,5H11V6z"/>
             </svg>
         </div>
-        <div class="progress-bar"></div>
-
 <!-- google map -->
-        <div class="container">
-            <h3>My Google Maps Demo</h3>
-            <!--The div element for the map -->
-            <p id="infos"></p>
-            <div id="map"></div>
-        </div>
+        <div id="map"></div>
+        <p id="infos"></p>
+
+        <footer>
+            <h2>World is beautiful</h2>
+            <h4>Copyright - <a href="http://galdranorn.github.io">galdranorn 2018</a></h4>
+        </footer>
+    
 
 <!-- mustache slide template -->
         <script>
             var slidesData = [
                 {
-                image: 'images/carousel/lake.jpg', 
-                title: 'Lake',
-                description: 'Sample text 1',
-                link: 'carousel-cell1'
+                image: 'images/carousel/poland.jpg', 
+                imageCredits: 'https://commons.wikimedia.org/wiki/Wroc%C5%82aw#/media/File:Panorama1_jpg_hi_res.jpg',
+                title: 'Wrocław, Poland',
+                description: 'Historical capital of Silesia. The history of the city dates back over a thousand years, and its extensive heritage combines almost all religions and cultures of Europe: it has been part of the Kingdom of Poland, Kingdom of Bohemia, Kingdom of Hungary, Habsburg Monarchy, Kingdom of Prussia, German Empire, Weimar Republic and Nazi Germany.',
+                link: 'poland',
+                coords: {lat: 51.189, lng: 17.015}
                 },
                 {
-                image: 'images/carousel/mountain.jpeg', 
-                title: 'Mountain',
-                description: 'Sample text 2',
-                link: 'carousel-cell2'
+                image: 'images/carousel/greece.jpg', 
+                imageCredits: 'https://commons.wikimedia.org/wiki/Category:Zakynthos#/media/File:Coastal_sunrise_at_Navagio_(Unsplash).jpg',
+                title: 'Zakynthos, Greece',
+                description: 'The ancient Greek poet Homer mentioned Zakynthos in the Iliad and the Odyssey, stating that its first inhabitants were the son of King Dardanos of Arcadia, called Zakynthos, and his men. Numerous natural "blue caves" are cut into cliffs around Cape Skinari, and accessible only by small boats. The mild, Mediterranean climate and the plentiful winter rainfall endow the island with dense vegetation and you can try high quality local products like olive oil, currants, grapes and citrus fruit. ',
+                link: 'greece',
+                coords: {lat: 37.788, lng: 20.666}
                 },
                 {
-                image: 'images/carousel/forest.jpg', 
-                title: 'Forest',
-                description: 'Sample text 3',
-                link: 'carousel-cell3'
+                image: 'images/carousel/india.jpg',
+                imageCredits: 'https://commons.wikimedia.org/wiki/Mysore#/media/File:Lalitha_mahal_mysore_ml_wiki.JPG', 
+                title: 'Mysore, India',
+                description: 'Mysore is noted for its heritage structures and palaces, including the Mysore Palace, and for the festivities that take place during the Dasara festival when the city receives a large number of tourists from around the world. It lends its name to various art forms and culture, such as Mysore Dasara, Mysore Painting; the sweet dish Mysore Pak, Mysore masala dosa; brands such as Mysore Sandal Soap, Mysore Ink; and styles and cosmetics such as Mysore Peta (a traditional silk turban) and the Mysore Silk sarees. ',
+                link: 'india',
+                coords: {lat: 12.310, lng: 76.565}
                 },
+                {
+                image: 'images/carousel/china.jpeg', 
+                imageCredits: 'https://commons.wikimedia.org/wiki/Category:Yangshuo#/media/File:Li_River_(101127919).jpeg',
+                title: 'Yangshuo, China',
+                description: 'The history of West Street dates back to over 1400 years ago. Since the street is popular with locals and foreigners alike, signs are written in both Chinese and English, many locals speak some English unlike most Chinese towns of its size.The Yangshuo region has numerous locations for climbing, the most famous of these crags is Moon Hill with several 5.13 graded lines.',
+                link: 'china',
+                coords: {lat: 24.803, lng: 110.446}
+                },
+                {
+                image: 'images/carousel/japan.jpg',
+                imageCredits: 'https://commons.wikimedia.org/wiki/%E4%BA%AC%E9%83%BD%E5%B8%82#/media/File:Hino-tanjoin01s2048.jpg', 
+                title: 'Kyoto, Japan',
+                description: 'Most well known in Japanese history for being the former Imperial capital of Japan for more than one thousand years, as well as a major part of the Kyoto-Osaka-Kobe metropolitan area.',
+                link: 'japan',
+                coords: {lat: 34.994, lng: 135.785}
+                },
+                {
+                image: 'images/carousel/australia.jpg',
+                imageCredits: 'https://commons.m.wikimedia.org/wiki/File:Heron_Island.jpg', 
+                title: 'Heron Island, Australia',
+                description: 'A coral cay located near the Tropic of Capricorn in the southern Great Barrier Reef. The island is situated on the leeward (western) side of Heron Reef, a fringing platform reef of significant biodiversity, supporting around 900 of the 1,500 fish species and 72% of the coral species found on the Great Barrier Reef.  The reef dates from the Holocene period but shows evidence of possible development in the Pleistocene period.  ',
+                link: 'australia',
+                coords: {lat: -23.442, lng: 151.912}
+                },
+                {
+                image: 'images/carousel/peru.jpg', 
+                imageCredits: 'https://commons.wikimedia.org/wiki/File:Cusco_Rainbow_Mountain.jpg',
+                title: 'Rainbow Mountain, Peru',
+                description: 'Vinicunca, also called Montaña de Siete Colores, Montaña de Colores or Rainbow Mountain is a mountain in Peru with an altitude of 5,200 meters above sea level. It is located in the Andes of Peru, in the Cusco Region.',
+                link: 'peru',
+                coords: {lat: -13.518, lng: -71.976}
+                },
+                {
+                image: 'images/carousel/mexico.jpg', 
+                imageCredits: 'https://en.m.wikipedia.org/wiki/Sistema_Dos_Ojos#/media/File%3AEntrance_to_Dos_Ojos.JPG',
+                title: 'Sistema dos Ojos, Mexico',
+                description: 'Part of a flooded cave system located in the state of Quintana Roo, Mexico. The exploration of Dos Ojos began in 1987 and still continues. The surveyed extent of the cave system is 82 kilometers (51 mi) and there are 28 known sinkhole entrances, which are locally called cenotes. In January 2018, a connection was found between Sistema Dos Ojos and Sistema Sac Actun. The smaller Dos Ojos became a part of Sac Actun, making the Sistema Sac Actun the longest known underwater cave system in the world.',
+                link: 'mexico',
+                coords: {lat: -25.363, lng: 131.044}
+                },
+                {
+                image: 'images/carousel/canada.jpg', 
+                imageCredits: 'https://en.wikipedia.org/wiki/Banff_National_Park#/media/File:Banff_(Alberta).jpg',
+                title: 'Banff National Park, Canada',
+                description: 'Its oldest national park Canada established in 1885. Located in the Rocky Mountains, encompasses 6,641 square kilometres (2,564 sq mi) of mountainous terrain, with numerous glaciers and ice fields, dense coniferous forest, and alpine landscapes. The Icefields Parkway extends from Lake Louise, connecting to Jasper National Park in the north. Provincial forests and Yoho National Park are neighbours to the west, while Kootenay National Park is located to the south and Kananaskis Country to the southeast.',
+                link: 'canada',
+                coords: {lat: 51.176, lng: -115.585}
+                },
+                {
+                image: 'images/carousel/iceland.jpg', 
+                imageCredits: 'https://commons.wikimedia.org/wiki/Category:Seljalandsfoss#/media/File:Idyllic_landscape_with_a_waterfall_(Unsplash).jpg',
+                title: 'Seljalandsfoss, Iceland',
+                description: 'Just a waterfall in Iceland located in the South Region of the country. The waterfall drops 60 m (197 ft) and is part of the Seljalands River that has its origin in the volcano glacier Eyjafjallajökull. Visitors can walk behind the falls into a small cave. Plans to build a 8-metre high, 2000 square-metre information centre near the waterfall provoked controversy in Iceland in May 2017. Opponents of the plans argued that the building would spoil the view of the waterfall and interrupt the natural look of the area. As you can see, something totally opposite happened.',
+                link: 'iceland',
+                coords: {lat: 63.615, lng: -19.991}
+                },
+                {
+                image: 'images/carousel/ireland.jpg', 
+                imageCredits: 'https://commons.m.wikimedia.org/wiki/File:Dark_Hedges_near_Armoy,_Co_Antrim.jpg',
+                title: 'Dark Hedges, Ireland',
+                description: 'The Dark Hedges is an avenue of  along Bregagh Road between Armoy and Stranocum in County Antrim, Northern Ireland. The trees form an atmospheric tunnel that has been used as a location in HBOs popular television series Game of Thrones, which has resulted in the avenue becoming a tourist attraction. According to legend, the hedges are visited by a ghost called the Grey Lady, who travels the road and flits across it from tree to tree. She is claimed to be either the spirit of James Stuarts daughter (named "Cross Peggy") or one of the houses maids who died mysteriously, or a spirit from an abandoned graveyard beneath the fields, who on Halloween is joined on her visitation by other spirits from the graveyard.',
+                link: 'ireland',
+                coords: {lat: 55.087, lng: -6.504}
+                },
+                {
+                image: 'images/carousel/morocco.jpg', 
+                imageCredits: 'https://commons.wikimedia.org/wiki/Category:Chefchaouen#/media/File:Chefchaouen,_Morocco_(Unsplash).jpg',
+                title: 'Chefchaouen, Morocco',
+                description: 'City, also known as Chaouen, is a city in northwest Morocco. It is the chief town of the province of the same name, and is noted for its buildings in shades of blue. Chefchaouen is situated just inland from Tangier and Tétouan.',
+                link: 'morocco',
+                coords: {lat: 35.171, lng: -5.304}
+                }
             ];
         </script>
 
         <script id="template-slides" type="x-tmpl-mustache">
             <div id={{link}} class="carousel-cell" style="background-image:url({{image}})">
-                <div class="container">
+                <div class="container cellContainer">
                     <h3>{{title}}</h3>
-                    {{description}}
+                    <p>{{description}}</p>
                 </div>
+                <a href={{imageCredits}}>photo credits</a>
             </div>
         </script>
 
