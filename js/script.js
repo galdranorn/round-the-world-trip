@@ -53,44 +53,29 @@ flkty.on( 'scroll', function( progress ) {
 // ----------------------------------------
 
 (function(){ 
-	var infos = document.querySelector('#infos');
+    
 	
   	window.initMap = function() { 
-		var uluru = {lat: -25.363, lng: 131.044};
-		var coords2 = {lat: -25.363, lng: 134.044};
-		var coords3 = {lat: -25.363, lng: 137.044};
+        var initialLoc = slidesData[0].coords;
+        var slides = slidesData.length;
+        var infos = document.querySelector('#infos');
 		
 		var map = new google.maps.Map(document.querySelector('#map'), {
-			zoom: 4,
-			center: uluru
-		});
-		
-		var markerOne = new google.maps.Marker({
-			position: uluru,
-			map: map
-		});
-		
-		markerOne.addListener('click', function(){
-			infos.innerHTML = 'You clicked markerOne';
-		});		
-		
-		var markerTwo = new google.maps.Marker({
-			position: coords2,
-			map: map
+			zoom: 6,
+			center: initialLoc
 		});
 
-		markerTwo.addListener('click', function(){
-			infos.innerHTML = 'You clicked markerTwo';
-		});		
+        for (i=0; i<slides; i++){
+            
+            var marker = new google.maps.Marker({
+                position: slidesData[i].coords,
+                map: map
+            });
 		
-		var markerThree = new google.maps.Marker({
-			position: coords3,
-			map: map
-		});
-		
-		markerThree.addListener('click', function(){
-			infos.innerHTML = 'You clicked markerThree';
-		});	
+		    marker.addListener('click', function(){
+			    infos.innerHTML = "xxx";
+		    });		
+        }
 		
 	}; 
 	
