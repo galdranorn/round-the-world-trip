@@ -6,7 +6,6 @@ var carousel = document.querySelector("#carousel");
 var slidesAmount = slidesData.length-1;
 
 for (i=0; i<=slidesAmount; i++) {
-    console.log(slidesAmount);
     var oldHtml = carousel.innerHTML;
     var newSlide = Mustache.render(template, slidesData[i]);
     carousel.innerHTML = oldHtml + newSlide;
@@ -58,22 +57,23 @@ flkty.on( 'scroll', function( progress ) {
   	window.initMap = function() { 
         var initialLoc = slidesData[0].coords;
         var slides = slidesData.length;
-        var infos = document.querySelector('#infos');
-		
+        var markers = [];
+        
 		var map = new google.maps.Map(document.querySelector('#map'), {
-			zoom: 6,
+			zoom: 4,
 			center: initialLoc
 		});
 
         for (i=0; i<slides; i++){
-            
-            var marker = new google.maps.Marker({
+            markers[i] = new google.maps.Marker({
                 position: slidesData[i].coords,
-                map: map
-            });
-		
-		    marker.addListener('click', function(){
-			    infos.innerHTML = "xxx";
+                map: map,
+                id: i
+            })
+		    markers[i].addListener('click', function(){
+                console.log(this.id);
+                map.setCenter(markers[this.id].getPosition());
+			    flkty.select(this.id)
 		    });		
         }
 		
